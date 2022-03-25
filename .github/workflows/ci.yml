@@ -31,6 +31,7 @@ jobs:
           RAILS_ENV: test
           DATABASE_PORT: 3306
         run: |
+          cp config/database.yml.ci config/database.yml
           bin/rails db:create
           bin/rails db:schema:load
           bin/rails test
