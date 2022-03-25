@@ -6,3 +6,4 @@ test:
   password:
   database: github_actions_test
   socket: /tmp/mysql.sock
+  host: 127.0.0.1
