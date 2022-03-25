@@ -5,5 +5,4 @@ test:
   username: root
   password:
   database: github_actions_test
-  host: <%= ENV.fetch('MYSQL_HOST', 'localhost') %>
-  port: <%= ENV.fetch('MYSQL_PORT', 3306) %>
+  socket: /tmp/mysql.sock
