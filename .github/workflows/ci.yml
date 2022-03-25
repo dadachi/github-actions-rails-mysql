@@ -20,11 +20,10 @@ jobs:
         ports:
           - "3306:3306"
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Ruby 2.7
+      - uses: actions/checkout@v3
+      - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7
           bundler: default
           bundler-cache: true
       - name: Run tests
@@ -32,6 +31,7 @@ jobs:
           RAILS_ENV: test
           DATABASE_PORT: 3306
         run: |
+          # cp config/database.yml.ci config/database.yml
           bin/rails db:create
           bin/rails db:schema:load
           bin/rails test
